@@ -11,7 +11,7 @@ WORKDIR $HOME
 COPY desktop-multiloginx-ubuntu-24.04-amd64.deb /tmp/multiloginx.deb
 
 RUN apt-get update && \
-    apt-get install -y flameshot && \
+    apt-get install -y flameshot kazam && \
     apt-get install -y --no-install-recommends /tmp/multiloginx.deb && \
     rm -f /tmp/multiloginx.deb && \
     apt-get clean && \
