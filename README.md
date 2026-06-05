@@ -1,4 +1,4 @@
 # About
 
-Extension of kasmweb/ubuntu-noble-desktop:1.18.0-rolling-weekly to include the latest version of multilogin.
+Extension of kasmweb/ubuntu-noble-desktop:1.18.0-rolling-weekly to include the latest version of multilogin (12.5.0).
 For convinience, flameshot and kazam are added too. 
