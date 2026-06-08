@@ -53,6 +53,17 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
+# Multilogin requirement
+RUN tee /etc/apt/sources.list.d/jammy.list <<'EOF'
+deb http://archive.ubuntu.com/ubuntu jammy main universe
+deb http://security.ubuntu.com/ubuntu jammy-security main universe
+EOF
+
+RUN apt update && apt install libwebkit2gtk-4.0-37
+RUN rm /etc/apt/sources.list.d/jammy.list && apt update
+# ---
+
 # Optional: copy Multilogin desktop launcher to the user's desktop if the package installed one
 RUN mkdir -p $HOME/Desktop && \
     find /usr/share/applications -iname '*multilogin*.desktop' -exec cp {} $HOME/Desktop/ \; || true && \
