@@ -60,7 +60,7 @@ deb http://archive.ubuntu.com/ubuntu jammy main universe
 deb http://security.ubuntu.com/ubuntu jammy-security main universe
 EOF
 
-RUN apt update && apt install libwebkit2gtk-4.0-37
+RUN apt update && apt install -y libwebkit2gtk-4.0-37
 RUN rm /etc/apt/sources.list.d/jammy.list && apt update
 # ---
 
